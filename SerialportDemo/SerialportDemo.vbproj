@@ -1,0 +1,553 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{18AD1ACE-7A31-44F1-91E3-AEF0465554E8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>SerialportDemo.My.MyApplication</StartupObject>
+    <RootNamespace>SerialportDemo</RootNamespace>
+    <AssemblyName>SerialportDemo</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>SerialportDemo.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>SerialportDemo.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DSAPI, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DSAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="DSControls">
+      <HintPath>..\..\..\..\DSControls.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminAutoSpeedsettings.Designer.vb">
+      <DependentUpon>AdminAutoSpeedsettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminAutoSpeedsettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminSurveillance.Designer.vb">
+      <DependentUpon>AdminSurveillance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminSurveillance.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Connect.Designer.vb">
+      <DependentUpon>Connect.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Connect.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Connectiondatabase.vb" />
+    <Compile Include="DevelopersAbnormal.Designer.vb">
+      <DependentUpon>DevelopersAbnormal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DevelopersAbnormal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevelopersHome.Designer.vb">
+      <DependentUpon>DevelopersHome.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DevelopersHome.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevelopersManager.Designer.vb">
+      <DependentUpon>DevelopersManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DevelopersManager.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevelopersParametersetting.Designer.vb">
+      <DependentUpon>DevelopersParametersetting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DevelopersParametersetting.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevelopersSendDataSettings.Designer.vb">
+      <DependentUpon>DevelopersSendDataSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DevelopersSendDataSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevelopersSurveillance.Designer.vb">
+      <DependentUpon>DevelopersSurveillance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DevelopersSurveillance.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevelopersModbusaddress.Designer.vb">
+      <DependentUpon>DevelopersModbusaddress.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DevelopersModbusaddress.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="index.vb" />
+    <Compile Include="LoginRegistrationprocedures.Designer.vb">
+      <DependentUpon>LoginRegistrationprocedures.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LoginRegistrationprocedures.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.vb" />
+    <Compile Include="Moduleone.vb" />
+    <Compile Include="DevelopersReadadd.Designer.vb">
+      <DependentUpon>DevelopersReadadd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DevelopersReadadd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevelopersReadSettings.Designer.vb">
+      <DependentUpon>DevelopersReadSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DevelopersReadSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReturnCRC.vb" />
+    <Compile Include="DevelopersSpeedset.Designer.vb">
+      <DependentUpon>DevelopersSpeedset.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DevelopersSpeedset.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevelopersSpeedsettings.Designer.vb">
+      <DependentUpon>DevelopersSpeedsettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DevelopersSpeedsettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminManualSpeedsettings.Designer.vb">
+      <DependentUpon>AdminManualSpeedsettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminManualSpeedsettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScriptManager.Designer.vb">
+      <DependentUpon>ScriptManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptManager.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SerialportLogin.Designer.vb">
+      <DependentUpon>SerialportLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SerialportLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemHook.vb" />
+    <Compile Include="WinSerialportManager.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinSerialportManager.Designer.vb">
+      <DependentUpon>WinSerialportManager.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="WritingINI.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AdminAutoSpeedsettings.resx">
+      <DependentUpon>AdminAutoSpeedsettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminSurveillance.resx">
+      <DependentUpon>AdminSurveillance.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Connect.resx">
+      <DependentUpon>Connect.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevelopersAbnormal.resx">
+      <DependentUpon>DevelopersAbnormal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevelopersHome.resx">
+      <DependentUpon>DevelopersHome.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevelopersManager.resx">
+      <DependentUpon>DevelopersManager.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevelopersParametersetting.resx">
+      <DependentUpon>DevelopersParametersetting.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevelopersSendDataSettings.resx">
+      <DependentUpon>DevelopersSendDataSettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevelopersSurveillance.resx">
+      <DependentUpon>DevelopersSurveillance.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevelopersModbusaddress.resx">
+      <DependentUpon>DevelopersModbusaddress.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevelopersReadadd.resx">
+      <DependentUpon>DevelopersReadadd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevelopersReadSettings.resx">
+      <DependentUpon>DevelopersReadSettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevelopersSpeedset.resx">
+      <DependentUpon>DevelopersSpeedset.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevelopersSpeedsettings.resx">
+      <DependentUpon>DevelopersSpeedsettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminManualSpeedsettings.resx">
+      <DependentUpon>AdminManualSpeedsettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginRegistrationprocedures.resx">
+      <DependentUpon>LoginRegistrationprocedures.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScriptManager.resx">
+      <DependentUpon>ScriptManager.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SerialportLogin.resx">
+      <DependentUpon>SerialportLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinSerialportManager.resx">
+      <DependentUpon>WinSerialportManager.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ADODB">
+      <Guid>{00000205-0000-0010-8000-00AA006D2EA4}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="DAO">
+      <Guid>{00025E04-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>3</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="DatabConnection">
+      <Guid>{94DF1D00-32FD-4CF0-834A-8AE0DBA4E74B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="GetVolum">
+      <Guid>{F6829AC4-4F19-40E6-9223-1BF897CA051F}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Access">
+      <Guid>{4AFFC9A0-5F99-101B-AF4E-00AA003F0F07}</Guid>
+      <VersionMajor>9</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Access.Dao">
+      <Guid>{4AC9E1DA-5BAD-4AC7-86E3-24F4CDCECA28}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="MSDATASRC">
+      <Guid>{7C0FFAB0-CD84-11D0-949A-00A0C91110ED}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="MSScriptControl">
+      <Guid>{0E59F1D2-1FBE-11D0-8FF2-00A0D10038BC}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Office">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Scripting">
+      <Guid>{420B2830-E718-11CF-893D-00A0C9054228}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="StdFormat">
+      <Guid>{6B263850-900B-11D0-9484-00A0C91110ED}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBRUN">
+      <Guid>{EA544A21-C82D-11D1-A3E4-00A0C90AEA82}</Guid>
+      <VersionMajor>6</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>9</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQ图片20180228181539.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\win.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\win1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\q.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16pic_5013054_b.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16pic_5013054_b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file_warning_96px_1187331_easyicon.net.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file_warning_64px_1187331_easyicon.net.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mac_Address_Book_64px_1180086_easyicon.net.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\set_system_64px_12353_easyicon.net.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x_office_address_book_64px_1172171_easyicon.net.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\speed_test_62.933333333333px_1118805_easyicon.net.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\activity_monitor_matrix_screen_64px_42882_easyicon.net.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings_67.859922178988px_1208181_easyicon.net.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open_file_24px_1187339_easyicon.net.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy_24px_1113380_easyicon.net.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paste_24px_1071471_easyicon.net.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_64.365714285714px_1201100_easyicon.net.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
