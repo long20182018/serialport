@@ -23,6 +23,7 @@
         Next
     End Sub
 #End Region
+
 #Region "添加数据到数据库"
     Private Sub Adddata()
         Dim inputXcount As Byte
@@ -406,6 +407,7 @@
         MsgBox(ReturnString)
     End Sub
 #End Region
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Call Adddata()
     End Sub

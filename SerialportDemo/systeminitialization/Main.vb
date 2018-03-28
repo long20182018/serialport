@@ -3,6 +3,7 @@ Public Class Mainsystem
     Private loginyesno As Boolean = False
     Private passworderrorcount As Byte = 6
 
+#Region "loginsystem"
     Public Function loginsystem(username As String, password As String) As String
         Try
             Select Case username
@@ -59,5 +60,10 @@ Public Class Mainsystem
 
     End Function
 
+#End Region
+
+    Public Function registered() As Boolean
+        Return registeredsystems()
+    End Function
 
 End Class

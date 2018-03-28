@@ -90,7 +90,7 @@ Public Class WinSerialportManager
             frm.ShowDialog()
         End If
         '获取数据库UI参数,处理UI数据
-        Call HandleUI(HomespeedUI = conn.GetRowsarrayList("UI.mdb", "主页面UI"))
+        Call HandleUI(HomespeedUI = conn.GetRowsarrayList("主页面UI"))
         '创建系统主线程
         MainThreadManager = New Thread(AddressOf MainManager)
         MainThreadManager.Start()

@@ -1,6 +1,7 @@
 ﻿Imports System.IO
+Imports System.IO.Ports
 
-Module Moduleone
+Module Publicmodule
     '   My.Settings.DevelopersName = "long2018"
     '   My.Settings.DevelopersName = "qq614021330"
     '   My.Settings.adminname = "serialport"
@@ -41,12 +42,14 @@ Module Moduleone
     '  05                   01       05      08          00        FF        00          发送ON 发送OFF时,将FF00更改为0000
 
 #End Region
+    Public serialport As SerialPort
     Public 端口 As String
     Public 波特率 As String
     Public 数据位 As String
     Public 停止位 As String
     Public 校验 As String
     Public Splitdata                            '分割数据
+    Public getCRC As New ReturnCRC
 #Region "键盘勾子"
     Public Declare Auto Function GetAsyncKeyState Lib "user32 " (ByVal vKey As Integer) As Integer
     Public Declare Auto Function GetKeyState Lib "user32 " (ByVal nVirtKey As Long) As Integer
@@ -87,5 +90,16 @@ Module Moduleone
     Public Formuladata(0 To 100, 0 To 1) As String '存放配方数组，
 #End Region
 
+#Region "发送共有变量"
+    Public allowSend As Boolean = False
+
+#End Region
+
+#Region "注册相关"
+    '注册状态
+    Public redisteredstaet As Boolean = False
+
+
+#End Region
 
 End Module

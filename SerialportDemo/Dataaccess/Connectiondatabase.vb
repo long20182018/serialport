@@ -6,14 +6,36 @@ Public Class Connectiondatabase
     Dim Sqlstring As String
     Dim ConString As String
 
+    Public Function CreateDatabase(TableName As String) As String
+        On Error GoTo Errortext
+        Dim strCn As String
+        If TableName <> "" Then
+            ' strCn = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & DataAddress & ";Persist Security Info=False"
+
+            Dim con = New ADODB.Connection
+
+            con.Open(strCn)
+
+            strCn = "create table " & TableName & "(配方点 AutoIncrement,Z地址 text(10),Z值 text(10),R1地址 text(10),R1值 text(10),R2地址 text(10),R2值 text(10),R3地址 text(10),R3值 text(10) ,R3地址 text(10),R3值 text(10),R4地址 text(10),R4值 text(10),R5地址 text(10),R5值 text(10))"  '建立aaa表，字段配方点为自动编号型，字段xxx为10位字符型
+
+            con.Execute(strCn)
+
+            con.Close
+
+
+            TableName = "配方程序创建完毕"
+        Else
+            TableName = "表名不能为空"
+        End If
+
+Errortext:
+        TableName = "该程序已经存在，请修改程序名"
+    End Function
+
 #Region "设置参数"
 
     Public Sub SettingsSpeed(TabelName, NewarrayListvalue)
-
-        If conn.State = 1 Then conn.Close()
-        Sqlstring = ("provider=Microsoft.jet.OLEDB.4.0;data source=" & AppPath & "\config\Speed.mdb;Persist Security Info=False")
-        conn.Open(Sqlstring)
-
+        ConnModbusaddress()
         For x = 0 To UBound(NewarrayListvalue)
             If (NewarrayListvalue(x, 0) <> "") Then
                 Sqlstring = "Select * from " & TabelName & " where 名称='" & NewarrayListvalue（x, 0) & "'"
@@ -117,9 +139,9 @@ Public Class Connectiondatabase
             End If
         Next
         conn.Close()
-            Add_SurveillanceAddress = "添加成功"
+            Return "添加成功"
         Catch ex As Exception
-            Add_SurveillanceAddress = ex.ToString
+            Return ex.ToString
         End Try
     End Function
 
@@ -158,16 +180,16 @@ Public Class Connectiondatabase
 #Region "获取数据"
 
 #Region "GetRows"
-    Public Function GetRowsarrayList(DatabaseName As String, TableName As String)
+    Public Function GetRowsarrayList(TableName As String)
         On Error Resume Next
         If TableName <> "" Then
+            Call ConnModbusaddress()
             Sqlstring = "select * from " & TableName & " "
-            conn.Open（"provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & AppPath & "\config\" & DatabaseName & ";Persist Security Info=False"）
             Rst = conn.Execute(Sqlstring)
-            GetRowsarrayList = Rst.GetRows
+            Return Rst.GetRows
             conn.Close()
         Else
-            GetRowsarrayList = "表名不能为空"
+            Return "表名不能为空"
         End If
 
     End Function
@@ -190,7 +212,7 @@ Public Class Connectiondatabase
     Private Sub ConnModbusaddress()
         If conn.State = 1 Then conn.Close()
         If Rst.State = 1 Then Rst.Close()
-        conn.Open("provider=Microsoft.jet.OLEDB.4.0;data source=" & AppPath & "\config\Modbus.mdb;Persist Security Info=False")
+        conn.Open("provider=Microsoft.jet.OLEDB.4.0;data source=" & AppPath & "\config\settings.mdb;Persist Security Info=False")
     End Sub
 #End Region
 

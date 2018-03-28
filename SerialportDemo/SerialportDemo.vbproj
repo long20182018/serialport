@@ -99,131 +99,134 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminAutoSpeedsettings.Designer.vb">
+    <Compile Include="Dataaccess\connecteddevice.vb" />
+    <Compile Include="Dataaccess\serialClass.vb" />
+    <Compile Include="Dataaccess\tenbaseconversiontwo.vb" />
+    <Compile Include="winforms\admin\AdminAutoSpeedsettings.Designer.vb">
       <DependentUpon>AdminAutoSpeedsettings.vb</DependentUpon>
     </Compile>
-    <Compile Include="AdminAutoSpeedsettings.vb">
+    <Compile Include="winforms\admin\AdminAutoSpeedsettings.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminSurveillance.Designer.vb">
+    <Compile Include="winforms\admin\AdminSurveillance.Designer.vb">
       <DependentUpon>AdminSurveillance.vb</DependentUpon>
     </Compile>
-    <Compile Include="AdminSurveillance.vb">
+    <Compile Include="winforms\admin\AdminSurveillance.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ApplicationEvents.vb" />
-    <Compile Include="Connect.Designer.vb">
+    <Compile Include="registered\ApplicationEvents.vb" />
+    <Compile Include="winforms\user\Connect.Designer.vb">
       <DependentUpon>Connect.vb</DependentUpon>
     </Compile>
-    <Compile Include="Connect.vb">
+    <Compile Include="winforms\user\Connect.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Connectiondatabase.vb" />
-    <Compile Include="DevelopersAbnormal.Designer.vb">
+    <Compile Include="Dataaccess\Connectiondatabase.vb" />
+    <Compile Include="winforms\developers\DevelopersAbnormal.Designer.vb">
       <DependentUpon>DevelopersAbnormal.vb</DependentUpon>
     </Compile>
-    <Compile Include="DevelopersAbnormal.vb">
+    <Compile Include="winforms\developers\DevelopersAbnormal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DevelopersHome.Designer.vb">
+    <Compile Include="winforms\developers\DevelopersHome.Designer.vb">
       <DependentUpon>DevelopersHome.vb</DependentUpon>
     </Compile>
-    <Compile Include="DevelopersHome.vb">
+    <Compile Include="winforms\developers\DevelopersHome.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DevelopersManager.Designer.vb">
+    <Compile Include="winforms\developers\DevelopersManager.Designer.vb">
       <DependentUpon>DevelopersManager.vb</DependentUpon>
     </Compile>
-    <Compile Include="DevelopersManager.vb">
+    <Compile Include="winforms\developers\DevelopersManager.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DevelopersParametersetting.Designer.vb">
+    <Compile Include="winforms\developers\DevelopersParametersetting.Designer.vb">
       <DependentUpon>DevelopersParametersetting.vb</DependentUpon>
     </Compile>
-    <Compile Include="DevelopersParametersetting.vb">
+    <Compile Include="winforms\developers\DevelopersParametersetting.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DevelopersSendDataSettings.Designer.vb">
+    <Compile Include="winforms\developers\DevelopersSendDataSettings.Designer.vb">
       <DependentUpon>DevelopersSendDataSettings.vb</DependentUpon>
     </Compile>
-    <Compile Include="DevelopersSendDataSettings.vb">
+    <Compile Include="winforms\developers\DevelopersSendDataSettings.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DevelopersSurveillance.Designer.vb">
+    <Compile Include="winforms\developers\DevelopersSurveillance.Designer.vb">
       <DependentUpon>DevelopersSurveillance.vb</DependentUpon>
     </Compile>
-    <Compile Include="DevelopersSurveillance.vb">
+    <Compile Include="winforms\developers\DevelopersSurveillance.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
+    <Compile Include="winforms\user\Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form1.vb">
+    <Compile Include="winforms\user\Form1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DevelopersModbusaddress.Designer.vb">
+    <Compile Include="winforms\developers\DevelopersModbusaddress.Designer.vb">
       <DependentUpon>DevelopersModbusaddress.vb</DependentUpon>
     </Compile>
-    <Compile Include="DevelopersModbusaddress.vb">
+    <Compile Include="winforms\developers\DevelopersModbusaddress.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="index.vb" />
-    <Compile Include="LoginRegistrationprocedures.Designer.vb">
+    <Compile Include="registered\index.vb" />
+    <Compile Include="winforms\user\LoginRegistrationprocedures.Designer.vb">
       <DependentUpon>LoginRegistrationprocedures.vb</DependentUpon>
     </Compile>
-    <Compile Include="LoginRegistrationprocedures.vb">
+    <Compile Include="winforms\user\LoginRegistrationprocedures.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main.vb" />
-    <Compile Include="Moduleone.vb" />
-    <Compile Include="DevelopersReadadd.Designer.vb">
+    <Compile Include="systeminitialization\Main.vb" />
+    <Compile Include="Dataaccess\Publicmodule.vb" />
+    <Compile Include="winforms\developers\DevelopersReadadd.Designer.vb">
       <DependentUpon>DevelopersReadadd.vb</DependentUpon>
     </Compile>
-    <Compile Include="DevelopersReadadd.vb">
+    <Compile Include="winforms\developers\DevelopersReadadd.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DevelopersReadSettings.Designer.vb">
+    <Compile Include="winforms\developers\DevelopersReadSettings.Designer.vb">
       <DependentUpon>DevelopersReadSettings.vb</DependentUpon>
     </Compile>
-    <Compile Include="DevelopersReadSettings.vb">
+    <Compile Include="winforms\developers\DevelopersReadSettings.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReturnCRC.vb" />
-    <Compile Include="DevelopersSpeedset.Designer.vb">
+    <Compile Include="Dataaccess\ReturnCRC.vb" />
+    <Compile Include="winforms\developers\DevelopersSpeedset.Designer.vb">
       <DependentUpon>DevelopersSpeedset.vb</DependentUpon>
     </Compile>
-    <Compile Include="DevelopersSpeedset.vb">
+    <Compile Include="winforms\developers\DevelopersSpeedset.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DevelopersSpeedsettings.Designer.vb">
+    <Compile Include="winforms\developers\DevelopersSpeedsettings.Designer.vb">
       <DependentUpon>DevelopersSpeedsettings.vb</DependentUpon>
     </Compile>
-    <Compile Include="DevelopersSpeedsettings.vb">
+    <Compile Include="winforms\developers\DevelopersSpeedsettings.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminManualSpeedsettings.Designer.vb">
+    <Compile Include="winforms\admin\AdminManualSpeedsettings.Designer.vb">
       <DependentUpon>AdminManualSpeedsettings.vb</DependentUpon>
     </Compile>
-    <Compile Include="AdminManualSpeedsettings.vb">
+    <Compile Include="winforms\admin\AdminManualSpeedsettings.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ScriptManager.Designer.vb">
+    <Compile Include="winforms\user\ScriptManager.Designer.vb">
       <DependentUpon>ScriptManager.vb</DependentUpon>
     </Compile>
-    <Compile Include="ScriptManager.vb">
+    <Compile Include="winforms\user\ScriptManager.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SerialportLogin.Designer.vb">
+    <Compile Include="winforms\user\SerialportLogin.Designer.vb">
       <DependentUpon>SerialportLogin.vb</DependentUpon>
     </Compile>
-    <Compile Include="SerialportLogin.vb">
+    <Compile Include="winforms\user\SerialportLogin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SystemHook.vb" />
-    <Compile Include="WinSerialportManager.vb">
+    <Compile Include="systemsettings\SystemHook.vb" />
+    <Compile Include="winforms\user\WinSerialportManager.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WinSerialportManager.Designer.vb">
+    <Compile Include="winforms\user\WinSerialportManager.Designer.vb">
       <DependentUpon>WinSerialportManager.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
@@ -242,67 +245,67 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="WritingINI.vb" />
+    <Compile Include="registered\WritingINI.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AdminAutoSpeedsettings.resx">
+    <EmbeddedResource Include="winforms\admin\AdminAutoSpeedsettings.resx">
       <DependentUpon>AdminAutoSpeedsettings.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminSurveillance.resx">
+    <EmbeddedResource Include="winforms\admin\AdminSurveillance.resx">
       <DependentUpon>AdminSurveillance.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Connect.resx">
+    <EmbeddedResource Include="winforms\user\Connect.resx">
       <DependentUpon>Connect.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DevelopersAbnormal.resx">
+    <EmbeddedResource Include="winforms\developers\DevelopersAbnormal.resx">
       <DependentUpon>DevelopersAbnormal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DevelopersHome.resx">
+    <EmbeddedResource Include="winforms\developers\DevelopersHome.resx">
       <DependentUpon>DevelopersHome.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DevelopersManager.resx">
+    <EmbeddedResource Include="winforms\developers\DevelopersManager.resx">
       <DependentUpon>DevelopersManager.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DevelopersParametersetting.resx">
+    <EmbeddedResource Include="winforms\developers\DevelopersParametersetting.resx">
       <DependentUpon>DevelopersParametersetting.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DevelopersSendDataSettings.resx">
+    <EmbeddedResource Include="winforms\developers\DevelopersSendDataSettings.resx">
       <DependentUpon>DevelopersSendDataSettings.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DevelopersSurveillance.resx">
+    <EmbeddedResource Include="winforms\developers\DevelopersSurveillance.resx">
       <DependentUpon>DevelopersSurveillance.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="winforms\user\Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DevelopersModbusaddress.resx">
+    <EmbeddedResource Include="winforms\developers\DevelopersModbusaddress.resx">
       <DependentUpon>DevelopersModbusaddress.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DevelopersReadadd.resx">
+    <EmbeddedResource Include="winforms\developers\DevelopersReadadd.resx">
       <DependentUpon>DevelopersReadadd.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DevelopersReadSettings.resx">
+    <EmbeddedResource Include="winforms\developers\DevelopersReadSettings.resx">
       <DependentUpon>DevelopersReadSettings.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DevelopersSpeedset.resx">
+    <EmbeddedResource Include="winforms\developers\DevelopersSpeedset.resx">
       <DependentUpon>DevelopersSpeedset.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DevelopersSpeedsettings.resx">
+    <EmbeddedResource Include="winforms\developers\DevelopersSpeedsettings.resx">
       <DependentUpon>DevelopersSpeedsettings.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminManualSpeedsettings.resx">
+    <EmbeddedResource Include="winforms\admin\AdminManualSpeedsettings.resx">
       <DependentUpon>AdminManualSpeedsettings.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginRegistrationprocedures.resx">
+    <EmbeddedResource Include="winforms\user\LoginRegistrationprocedures.resx">
       <DependentUpon>LoginRegistrationprocedures.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ScriptManager.resx">
+    <EmbeddedResource Include="winforms\user\ScriptManager.resx">
       <DependentUpon>ScriptManager.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SerialportLogin.resx">
+    <EmbeddedResource Include="winforms\user\SerialportLogin.resx">
       <DependentUpon>SerialportLogin.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WinSerialportManager.resx">
+    <EmbeddedResource Include="winforms\user\WinSerialportManager.resx">
       <DependentUpon>WinSerialportManager.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -313,6 +316,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="systemsettings\app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="My Project\app.manifest">
       <SubType>Designer</SubType>
     </None>
@@ -325,7 +331,6 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="ADODB">
@@ -542,6 +547,7 @@
   <ItemGroup>
     <None Include="Resources\home_64.365714285714px_1201100_easyicon.net.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

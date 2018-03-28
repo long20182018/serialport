@@ -43,7 +43,7 @@ Public Class AdminAutoSpeedsettings
 
         Try
             '从数据库中提取生成UI的设置（包括个数，地址，类型）
-            UIarrayList = conn.GetRowsarrayList("Speed.mdb", "自动速度")
+            UIarrayList = conn.GetRowsarrayList("自动速度")
             '创建UI更新线程
             CheckForIllegalCrossThreadCalls = False
             UIGeneration = New Thread(AddressOf PreparationGenerationUI)

@@ -22,44 +22,44 @@ Module index
     Public Md5YesNo As Boolean
 
 
-    Public Sub Main() '程序启动前的初始化过程
+    Public Function registeredsystems() As Boolean  '程序启动前的初始化过程
         Dim Pass1$, Pass2$, i%
         Dim yonghu1!, yonghu2$, yonghu3, yonghu4$
         Dim c1 As New GetVolum.getHarddisksequence
         'On Error Resume Next
 
-        If Dir("C:\记事本配置文件.ini") <> "" Then
-            Pass1 = GetIniS("注册参数", "用户名", "") '注册后保存在电脑上的用户名
-            Pass2 = GetIniS("注册参数", "注册码", "") '注册后保存在电脑上的注册码
+        If Dir("C:\Users\Administrator\Desktop\winformapplication\SerialportDemo - 副本\SerialportDemo\systemsettings\App.config") <> "" Then
+            ' Pass1 = My.Settings.Registeredusername   
+            Pass1 = My.Settings.Registeredusername                 '存放在配置表的注册名
+            Pass2 = My.Settings.RegisteredCode                     '存放在配置表的注册码 
+
             For i = 1 To Len(Pass1)
                 yonghu1 = yonghu1 + Asc(Mid$(Pass1, i, 1))
             Next i
             If yonghu1 < 0 Then yonghu1 = yonghu1 * -1 '如果负数，则转成整数
             yonghu2 = Mkey() + yonghu1 * 9
             yonghu3 = c1.DigestStrToHexStr(yonghu2) '用户名的md5
-            yonghu4 = Microsoft.VisualBasic.Left(yonghu3, 10) '真正的注册码
-
+            yonghu4 = Microsoft.VisualBasic.Left(yonghu3, 20) '真正的注册码
             If Pass2 = yonghu4 Then
-                frm.Show()
-
-            Else
-
+                Return True
+                Exit Function
             End If
         Else
-
+            Return False
         End If
-    End Sub
+        Return False
+    End Function
 
 
     Public Sub Regtimes() '调用次数限制的过程
         Dim RemainDay As Long
         RemainDay = GetSetting("记事本程序", "次数限制", "times", 0)
-        If RemainDay >= 1000 Then
+        If RemainDay >= 10 Then
             MsgBox("试用次数已满，请注册！", vbOKOnly, "重要提醒")
 
             Exit Sub
         End If
-        MsgBox("现在剩下：" & 1000 - RemainDay & "次试用，！QQ：614021330", vbOKOnly, "提示")
+        MsgBox("现在剩下：" & 10 - RemainDay & "次试用，！QQ：614021330", vbOKOnly, "提示")
         RemainDay = RemainDay + 1
         SaveSetting("记事本程序", "次数限制", "times", RemainDay)
 

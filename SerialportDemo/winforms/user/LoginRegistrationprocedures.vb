@@ -8,7 +8,7 @@ Public Class LoginRegistrationprocedures
     Dim mystream As FileStream
     Dim writer As StreamWriter
     Private Sub LoginRegistrationprocedures_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Call Main()
+        Call registeredsystems()
 
         TextBox1.Text = Mkey()
 
