@@ -73,6 +73,7 @@ Module Publicmodule
     Public DeveloperParametersetting(0 To 50)                    '开发人员参数设置
     Public DeveloperModbus                                       '开发人员Modbus
     Public loginname As String                                   '登录人员
+    Public Mssage As Mssgbox
 #End Region
 
 #Region "返回数据公有变量"

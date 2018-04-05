@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            '  Me.MainForm = Global.SerialportDemo.registeredsystem
+            Me.MainForm = Global.SerialportDemo.Developersdebugdevice
         End Sub
     End Class
 End Namespace

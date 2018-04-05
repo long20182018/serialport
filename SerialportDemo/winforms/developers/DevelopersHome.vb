@@ -1,9 +1,8 @@
 ﻿Public Class DevelopersHome
-    Private Sub DevelopersLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private conn As New Connectiondatabase
 
-    End Sub
-
-    Private Sub DS文本框1_Load(sender As Object, e As EventArgs) 
+    Private Sub DS按钮1_ButtonClick(Sender As Object) Handles DS按钮1.ButtonClick
+        conn.Settingprogram(TextBox1.Text, TextBox2.Text, TextBox3.Text)
 
     End Sub
 End Class

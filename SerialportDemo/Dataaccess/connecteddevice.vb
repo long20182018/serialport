@@ -28,7 +28,9 @@ Public Class connecteddevice
             serialport.ReadBufferSize = 6
             serialport.Open()
         Catch ex As Exception
-            MsgBox("连接失败" + vbNewLine + ErrorToString(), vbDefaultButton1, "错误")
+            Dim ms As New Mssgbox
+            ms.Label1.Text = "连接失败" + vbNewLine + ErrorToString()
+            ms.ShowDialog()
         End Try
     End Sub
 

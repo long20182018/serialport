@@ -70,12 +70,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\DSAPI.dll</HintPath>
     </Reference>
-    <Reference Include="DSControls">
-      <HintPath>..\..\..\..\DSControls.dll</HintPath>
+    <Reference Include="DSControls, Version=1.0.6666.36370, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\我的文档\Tencent Files\614021330\FileRecv\DSControls_DYLIKE控件库1.0.2.5 (1)\DSControls.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
@@ -115,6 +117,24 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="registered\ApplicationEvents.vb" />
+    <Compile Include="winforms\developers\Developersdebugdevice.Designer.vb">
+      <DependentUpon>Developersdebugdevice.vb</DependentUpon>
+    </Compile>
+    <Compile Include="winforms\developers\Developersdebugdevice.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="winforms\developers\Showed.Designer.vb">
+      <DependentUpon>Showed.vb</DependentUpon>
+    </Compile>
+    <Compile Include="winforms\developers\Showed.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="winforms\Mssgbox.Designer.vb">
+      <DependentUpon>Mssgbox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="winforms\Mssgbox.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="winforms\user\Connect.Designer.vb">
       <DependentUpon>Connect.vb</DependentUpon>
     </Compile>
@@ -134,10 +154,10 @@
     <Compile Include="winforms\developers\DevelopersHome.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="winforms\developers\DevelopersManager.Designer.vb">
-      <DependentUpon>DevelopersManager.vb</DependentUpon>
+    <Compile Include="winforms\developers\Showdebugdevice.Designer.vb">
+      <DependentUpon>Showdebugdevice.vb</DependentUpon>
     </Compile>
-    <Compile Include="winforms\developers\DevelopersManager.vb">
+    <Compile Include="winforms\developers\Showdebugdevice.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="winforms\developers\DevelopersParametersetting.Designer.vb">
@@ -254,6 +274,15 @@
     <EmbeddedResource Include="winforms\admin\AdminSurveillance.resx">
       <DependentUpon>AdminSurveillance.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="winforms\developers\Developersdebugdevice.resx">
+      <DependentUpon>Developersdebugdevice.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="winforms\developers\Showed.resx">
+      <DependentUpon>Showed.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="winforms\Mssgbox.resx">
+      <DependentUpon>Mssgbox.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="winforms\user\Connect.resx">
       <DependentUpon>Connect.vb</DependentUpon>
     </EmbeddedResource>
@@ -263,8 +292,8 @@
     <EmbeddedResource Include="winforms\developers\DevelopersHome.resx">
       <DependentUpon>DevelopersHome.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="winforms\developers\DevelopersManager.resx">
-      <DependentUpon>DevelopersManager.vb</DependentUpon>
+    <EmbeddedResource Include="winforms\developers\Showdebugdevice.resx">
+      <DependentUpon>Showdebugdevice.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="winforms\developers\DevelopersParametersetting.resx">
       <DependentUpon>DevelopersParametersetting.vb</DependentUpon>
@@ -342,10 +371,19 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+    <COMReference Include="ADOX">
+      <Guid>{00000600-0000-0010-8000-00AA006D2EA4}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
     <COMReference Include="DAO">
-      <Guid>{00025E04-0000-0000-C000-000000000046}</Guid>
-      <VersionMajor>3</VersionMajor>
-      <VersionMinor>5</VersionMinor>
+      <Guid>{00025E01-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>0</VersionMinor>
       <Lcid>0</Lcid>
       <WrapperTool>tlbimp</WrapperTool>
       <Isolated>False</Isolated>
@@ -418,6 +456,15 @@
       <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
       <VersionMajor>2</VersionMajor>
       <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="program">
+      <Guid>{BCE3DDAB-F217-415E-ABBE-4F507C861FF9}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
       <Lcid>0</Lcid>
       <WrapperTool>tlbimp</WrapperTool>
       <Isolated>False</Isolated>
@@ -547,7 +594,57 @@
   <ItemGroup>
     <None Include="Resources\home_64.365714285714px_1201100_easyicon.net.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Form.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Form1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQ图片20180401090103.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQ图片20180401090046.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\01d622565bdd3a32f8759647209751.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\01d622565bdd3a32f87596472097511.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\timg %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\未命名.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\timg %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\timg %282%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\timg %282%292.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\timg %282%293.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\timg %282%2911.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enter1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enter2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

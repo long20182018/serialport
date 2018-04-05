@@ -1,38 +1,124 @@
-﻿Imports ADODB
+﻿Imports System.Data.OleDb
+Imports ADODB
+Imports DAO
 
 Public Class Connectiondatabase
     Dim conn As New ADODB.Connection
     Dim Rst As New ADODB.Recordset
     Dim Sqlstring As String
     Dim ConString As String
-
-    Public Function CreateDatabase(TableName As String) As String
-        On Error GoTo Errortext
-        Dim strCn As String
-        If TableName <> "" Then
-            ' strCn = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & DataAddress & ";Persist Security Info=False"
-
-            Dim con = New ADODB.Connection
-
-            con.Open(strCn)
-
-            strCn = "create table " & TableName & "(配方点 AutoIncrement,Z地址 text(10),Z值 text(10),R1地址 text(10),R1值 text(10),R2地址 text(10),R2值 text(10),R3地址 text(10),R3值 text(10) ,R3地址 text(10),R3值 text(10),R4地址 text(10),R4值 text(10),R5地址 text(10),R5值 text(10))"  '建立aaa表，字段配方点为自动编号型，字段xxx为10位字符型
-
-            con.Execute(strCn)
-
-            con.Close
+    'adLockReadOnly = 1 
+    'adLockPessimistic = 2 
+    'adLockOptimistic = 3 
+    'adLockBatchOptimistic = 4 
 
 
-            TableName = "配方程序创建完毕"
-        Else
-            TableName = "表名不能为空"
-        End If
+#Region "调机类"
 
-Errortext:
-        TableName = "该程序已经存在，请修改程序名"
+    Public Sub debug_adddata(TabelName As String, Updatafield As Object, UpdataValue As Object)
+        Dim strcn As String
+        Try
+            If conn.State = 1 Then conn.Close()
+            If Rst.State = 1 Then Rst.Close()
+            strcn = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & AppPath & "\config\program.mdb;Persist Security Info=False"
+            conn.Open(strcn)
+            Rst.Open("select *  from " & TabelName & " ", conn, 1, 3)
+            Rst.AddNew()
+            For x As Byte = 0 To Updatafield
+                Rst.Fields(x + 2).Value = UpdataValue(x)
+            Next
+            Rst.Update()
+            Rst.Clone()
+            conn.Close()
+        Catch ex As Exception
+            Dim frm As New Mssgbox
+            frm.Label1.Text = vbNewLine + ErrorToString()
+            frm.ShowDialog()
+        End Try
+
+    End Sub
+
+#End Region
+
+    Public Function gettablename(basename As String) As Object
+        Try
+            Dim sr = ("provider=Microsoft.jet.OLEDB.4.0;data source=" & AppPath & "\config\" & basename & ";Persist Security Info=False")
+            Dim con As New OleDbConnection(sr)
+            con.Open()
+            Dim shemaTable As DataTable
+
+            shemaTable = conn.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, New Object() {vbNull, vbNull, vbNull, "TABLE"})
+        Catch ex As Exception
+            Return ex.ToString
+        End Try
+        Closebase()
     End Function
 
+    Public Function CreateDatabase(TableName As String) As String
+        Try
+
+            '先取得配置文件
+            Dim arrlist = GetRowsarrayList("settings.mdb", "程序配方配置")
+            If conn.State = 1 Then conn.Close()
+            If Rst.State = 1 Then Rst.Close()
+            Dim strCn As String
+            If TableName <> "" Then
+                '把表名添记录起来
+                strCn = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & AppPath & "\config\program.mdb;Persist Security Info=False"
+                conn.Open(strCn)
+                Sqlstring = "Insert into 配方列表(配方名,最后修改日期) VALUES('" & TableName & "','" & Format(Now, "yyyy/MM/dd") & "')"
+                conn.Execute(Sqlstring)
+                '将数据进行分割
+                Dim splitstr = Split(arrlist(2, 0), ",")
+
+                strCn = "create table " & TableName & "(配方点 AutoIncrement,起始地址 text(10))"
+                conn.Execute(strCn)
+                For x As Byte = 0 To UBound(splitstr)
+                    strCn = "ALTER TABLE " & TableName & " ADD " & splitstr(x) & " text(20)"
+                    conn.Execute(strCn)
+                Next
+                Sqlstring = "Insert into " & TableName & "(起始地址) VALUES('" & arrlist(0, 0) & "')"
+                conn.Execute(Sqlstring)
+                Closebase()
+                Return "文件创建成功"
+                Exit Function
+            End If
+            Return "文件创建失败"
+            Closebase()
+        Catch ex As Exception
+            Return ex.ToString
+        End Try
+        Closebase()
+    End Function
+
+    Public Sub Modifydata(basename As String, Tabelname As String, findfield As String, findvalue As String, Updatafield As String, Updatavalue As Object)
+
+        If conn.State = 1 Then conn.Close()
+        If Rst.State = 1 Then Rst.Close()
+        conn.Open("provider=Microsoft.jet.OLEDB.4.0;data source=" & AppPath & "\config\" & basename & ";Persist Security Info=False")
+        Sqlstring = "update " & Tabelname & " set " & Updatafield & " ='" & Updatavalue & "' where " & findfield & "='" & findvalue & "'"
+        conn.Execute(Sqlstring)
+        Closebase()
+
+    End Sub
+
 #Region "设置参数"
+
+    Public Sub Settingprogram(Startaddress As String, Countpoint As String, correspondencefield As String)
+        Dim templist = GetRowsarrayList("settings.mdb", "程序配方配置")
+        ConnModbusaddress()
+        Try
+
+            Sqlstring = "delete  from 程序配方配置 where 起始地址='" & templist(0, 0) & " '"
+            conn.Execute(Sqlstring)
+            Sqlstring = "Insert into 程序配方配置(起始地址,每个点几个位置,每个位置对应字段) VALUES('" & Startaddress & "','" & Countpoint & "','" & correspondencefield & "')"
+            conn.Execute(Sqlstring)
+        Catch ex As Exception
+            Sqlstring = "Insert into 程序配方配置(起始地址,每个点几个位置,每个位置对应字段) VALUES('" & Startaddress & "','" & Countpoint & "','" & correspondencefield & "')"
+            conn.Execute(Sqlstring)
+        End Try
+        Closebase()
+    End Sub
 
     Public Sub SettingsSpeed(TabelName, NewarrayListvalue)
         ConnModbusaddress()
@@ -44,8 +130,7 @@ Errortext:
                 Rst.Close()
             End If
         Next
-
-        conn.Close()
+        Closebase()
     End Sub
 
 #End Region
@@ -62,7 +147,7 @@ Errortext:
 
             For x = 0 To UBound(Newvalue)
                 Dim k = UBound(Newvalue) - 1
-                Sqlstring = "Insert into " & TabelName & " (Modbus, Plc,Hex) VALUES('" & Newvalue(x, 0) & "', '" & Newvalue(x, 1) & "', '" & Newvalue(x, 2) & "')"
+                Sqlstring = "Insert into " & TabelName & " (Modbus,Plc,Hex) VALUES('" & Newvalue(x, 0) & "', '" & Newvalue(x, 1) & "', '" & Newvalue(x, 2) & "')"
                 conn.Execute(Sqlstring)
             Next
             conn.Close()
@@ -131,14 +216,14 @@ Errortext:
 
 
             If conn.State = 1 Then conn.Close()
-        conn.Open("provider=Microsoft.jet.OLEDB.4.0;data source=" & AppPath & "\config\Speed.mdb;Persist Security Info=False")
-        For x = 0 To UBound(NewvalueArraylist)
-            If (NewvalueArraylist(x) <> "") Then
-                Sqlstring = "Insert into " & TabelName & "(" & fieldName & ") VALUES('" & NewvalueArraylist(x） & "')"
-                conn.Execute(Sqlstring)
-            End If
-        Next
-        conn.Close()
+            conn.Open("provider=Microsoft.jet.OLEDB.4.0;data source=" & AppPath & "\config\Speed.mdb;Persist Security Info=False")
+            For x = 0 To UBound(NewvalueArraylist)
+                If (NewvalueArraylist(x) <> "") Then
+                    Sqlstring = "Insert into " & TabelName & "(" & fieldName & ") VALUES('" & NewvalueArraylist(x） & "')"
+                    conn.Execute(Sqlstring)
+                End If
+            Next
+            conn.Close()
             Return "添加成功"
         Catch ex As Exception
             Return ex.ToString
@@ -180,18 +265,25 @@ Errortext:
 #Region "获取数据"
 
 #Region "GetRows"
-    Public Function GetRowsarrayList(TableName As String)
-        On Error Resume Next
-        If TableName <> "" Then
-            Call ConnModbusaddress()
-            Sqlstring = "select * from " & TableName & " "
-            Rst = conn.Execute(Sqlstring)
-            Return Rst.GetRows
-            conn.Close()
-        Else
-            Return "表名不能为空"
-        End If
+    Public Function GetRowsarrayList(baseName As String, TableName As String)
+        Try
+            If conn.State = 1 Then conn.Close()
+            If Rst.State = 1 Then Rst.Close()
+            conn.Open("provider=Microsoft.jet.OLEDB.4.0;data source=" & AppPath & "\config\" & baseName & ";Persist Security Info=False")
+            If TableName <> "" Then
+                Sqlstring = "select * from " & TableName & " "
 
+                Rst = conn.Execute(Sqlstring)
+                Return Rst.GetRows
+                Rst.Clone()
+
+            Else
+                Return "表名不能为空"
+            End If
+        Catch ex As Exception
+            Return "没有记录，或表被删除"
+        End Try
+        Closebase()
     End Function
 
 #End Region
@@ -204,11 +296,16 @@ Errortext:
         conn.Open("provider=Microsoft.jet.OLEDB.4.0;data source=" & AppPath & "\config\" & DatabaseName & ";Persist Security Info=False")
         Sqlstring = "delete from " & TabelName & ""
         conn.Execute(Sqlstring)
-        conn.Close()
+        Closebase()
     End Sub
 #End Region
 
 #Region "连接数据库"
+
+    Private Sub Closebase()
+        If conn.State = 1 Then conn.Close()
+        If Rst.State = 1 Then Rst.Close()
+    End Sub
     Private Sub ConnModbusaddress()
         If conn.State = 1 Then conn.Close()
         If Rst.State = 1 Then Rst.Close()
@@ -217,3 +314,4 @@ Errortext:
 #End Region
 
 End Class
+

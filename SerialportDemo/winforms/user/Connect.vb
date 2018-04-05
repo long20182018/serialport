@@ -30,5 +30,37 @@ Public Class Connect
         ComboBox5.Items.Add(6)
         ComboBox5.Items.Add(7)
         ComboBox5.Items.Add(8)
+        Label1.Parent = PictureBox1
+        Label2.Parent = PictureBox1
+        Label3.Parent = PictureBox1
+        Label4.Parent = PictureBox1
+        Label5.Parent = PictureBox1
+        Label6.Parent = PictureBox1
+        Label7.Parent = PictureBox1
+        PictureBox2.Parent = PictureBox1
+        PictureBox3.Parent = PictureBox1
+        Dim x As Integer = PictureBox1.Location.Y
+        Label1.Location = New Point(Label1.Location.X, Label1.Location.Y - x)
+        Label2.Location = New Point(Label2.Location.X, Label2.Location.Y - x)
+        Label3.Location = New Point(Label3.Location.X, Label3.Location.Y - x)
+        Label4.Location = New Point(Label4.Location.X, Label4.Location.Y - x)
+        Label5.Location = New Point(Label5.Location.X, Label5.Location.Y - x)
+        Label6.Location = New Point(Label6.Location.X, Label6.Location.Y - x)
+        Label7.Location = New Point(Label7.Location.X, Label7.Location.Y - x)
+        PictureBox2.Location = New Point(PictureBox2.Location.X, PictureBox2.Location.Y - x)
+        PictureBox3.Location = New Point(PictureBox3.Location.X, PictureBox3.Location.Y - x)
+        Me.FormBorderStyle = FormBorderStyle.None
+
+
+
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        Dim connect As New connecteddevice
+        connect.connect_device()
+    End Sub
+
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        Me.Close()
     End Sub
 End Class

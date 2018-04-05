@@ -35,7 +35,7 @@ Public Class WinSerialportManager
 
 #Region "参数设定，UI生成相关变量"
     '主页面速度UI
-    Dim HomespeedUI As Object
+    Dim HomespeedUI
     '获得可用端口名称
     Dim getportName As String()
 #End Region
@@ -90,7 +90,8 @@ Public Class WinSerialportManager
             frm.ShowDialog()
         End If
         '获取数据库UI参数,处理UI数据
-        Call HandleUI(HomespeedUI = conn.GetRowsarrayList("主页面UI"))
+        HomespeedUI = conn.GetRowsarrayList("settings.mdb", "主页面UI")
+        Call HandleUI(HomespeedUI)
         '创建系统主线程
         MainThreadManager = New Thread(AddressOf MainManager)
         MainThreadManager.Start()
@@ -111,7 +112,7 @@ Public Class WinSerialportManager
 
 #Region "处理UI数据"
 
-    Private Sub HandleUI(arr As Object)
+    Private Sub HandleUI(arr)
         For x = 1 To arr.length / (UBound(arr) + 1)
             For Each ct In Me.Controls
                 If (ct.name = arr(0, x - 1)) Then
@@ -379,7 +380,7 @@ Public Class WinSerialportManager
 
             If (keyShift = True And keyCtrl = True And KeyD = True) Then
                 If (loginname = "开发者") Then
-                    Dim frm As New DevelopersManager
+                    Dim frm As New Showdebugdevice
                     frm.ShowDialog()
                 End If
                 keydownBoole = True
@@ -1231,6 +1232,20 @@ Public Class WinSerialportManager
 
     Private Sub DS按钮8_MouseLeave(sender As Object, e As EventArgs) Handles DS按钮8.MouseLeave
         DS按钮8.颜色 = Color.FromArgb(50, 50, 50)
+    End Sub
+
+    Private Sub 程序编程ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 程序编程ToolStripMenuItem.Click
+        Dim frm As New Developersdebugdevice
+        frm.ShowDialog()
+    End Sub
+
+    Private Sub 连接设备ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 连接设备ToolStripMenuItem.Click
+        Dim frm As New Connect
+        frm.ShowDialog()
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+
     End Sub
 
 #End Region

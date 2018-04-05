@@ -50,8 +50,8 @@ Public Class AdminSurveillance
 #Region "初始化"
     Private Sub AdminSurveillance_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ''读取数据库提取UI数据 
-        SurveillanceserialportX = conn.GetRowsarrayList("监视端口X")
-        SurveillanceserialportY = conn.GetRowsarrayList("监视端口Y")
+        SurveillanceserialportX = conn.GetRowsarrayList("settings.mdb", "监视端口X")
+        SurveillanceserialportY = conn.GetRowsarrayList("settings.mdb", "监视端口Y")
         ''如果读取到UI数据，激活创建UI线程
         If (UBound(SurveillanceserialportX) > 0) Then
             UI_createThread = New Thread(AddressOf UI_Preparationcreate)

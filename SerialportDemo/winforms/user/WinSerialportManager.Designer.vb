@@ -30,9 +30,11 @@ Partial Class WinSerialportManager
         Me.保存SToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.编辑EToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.项目PToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.程序编程ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.工具TToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.选项ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.编辑脚本ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.连接设备ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.帮助HToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.协议相关ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.软件激活ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -79,7 +81,6 @@ Partial Class WinSerialportManager
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.心形投票1 = New DSControls.心形投票()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.连接设备ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -109,7 +110,7 @@ Partial Class WinSerialportManager
         Me.打开OToolStripMenuItem.BackColor = System.Drawing.Color.Transparent
         Me.打开OToolStripMenuItem.ForeColor = System.Drawing.Color.DarkOrange
         Me.打开OToolStripMenuItem.Name = "打开OToolStripMenuItem"
-        Me.打开OToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.打开OToolStripMenuItem.Size = New System.Drawing.Size(118, 22)
         Me.打开OToolStripMenuItem.Text = "打开(&O)"
         '
         '保存SToolStripMenuItem
@@ -117,7 +118,7 @@ Partial Class WinSerialportManager
         Me.保存SToolStripMenuItem.BackColor = System.Drawing.Color.Transparent
         Me.保存SToolStripMenuItem.ForeColor = System.Drawing.Color.DarkOrange
         Me.保存SToolStripMenuItem.Name = "保存SToolStripMenuItem"
-        Me.保存SToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.保存SToolStripMenuItem.Size = New System.Drawing.Size(118, 22)
         Me.保存SToolStripMenuItem.Text = "保存(&S)"
         '
         '编辑EToolStripMenuItem
@@ -129,10 +130,18 @@ Partial Class WinSerialportManager
         '
         '项目PToolStripMenuItem
         '
+        Me.项目PToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.程序编程ToolStripMenuItem})
         Me.项目PToolStripMenuItem.ForeColor = System.Drawing.Color.Orange
         Me.项目PToolStripMenuItem.Name = "项目PToolStripMenuItem"
         Me.项目PToolStripMenuItem.Size = New System.Drawing.Size(59, 21)
         Me.项目PToolStripMenuItem.Text = "项目(&P)"
+        '
+        '程序编程ToolStripMenuItem
+        '
+        Me.程序编程ToolStripMenuItem.Image = Global.SerialportDemo.My.Resources.Resources.set_system_64px_12353_easyicon_net
+        Me.程序编程ToolStripMenuItem.Name = "程序编程ToolStripMenuItem"
+        Me.程序编程ToolStripMenuItem.Size = New System.Drawing.Size(124, 22)
+        Me.程序编程ToolStripMenuItem.Text = "程序编程"
         '
         '工具TToolStripMenuItem
         '
@@ -147,14 +156,20 @@ Partial Class WinSerialportManager
         Me.选项ToolStripMenuItem.BackColor = System.Drawing.Color.Transparent
         Me.选项ToolStripMenuItem.ForeColor = System.Drawing.Color.DarkOrange
         Me.选项ToolStripMenuItem.Name = "选项ToolStripMenuItem"
-        Me.选项ToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.选项ToolStripMenuItem.Size = New System.Drawing.Size(124, 22)
         Me.选项ToolStripMenuItem.Text = "选项"
         '
         '编辑脚本ToolStripMenuItem
         '
         Me.编辑脚本ToolStripMenuItem.Name = "编辑脚本ToolStripMenuItem"
-        Me.编辑脚本ToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.编辑脚本ToolStripMenuItem.Size = New System.Drawing.Size(124, 22)
         Me.编辑脚本ToolStripMenuItem.Text = "编辑脚本"
+        '
+        '连接设备ToolStripMenuItem
+        '
+        Me.连接设备ToolStripMenuItem.Name = "连接设备ToolStripMenuItem"
+        Me.连接设备ToolStripMenuItem.Size = New System.Drawing.Size(124, 22)
+        Me.连接设备ToolStripMenuItem.Text = "连接设备"
         '
         '帮助HToolStripMenuItem
         '
@@ -167,19 +182,19 @@ Partial Class WinSerialportManager
         '协议相关ToolStripMenuItem
         '
         Me.协议相关ToolStripMenuItem.Name = "协议相关ToolStripMenuItem"
-        Me.协议相关ToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.协议相关ToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
         Me.协议相关ToolStripMenuItem.Text = "通讯协议相关"
         '
         '软件激活ToolStripMenuItem
         '
         Me.软件激活ToolStripMenuItem.Name = "软件激活ToolStripMenuItem"
-        Me.软件激活ToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.软件激活ToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
         Me.软件激活ToolStripMenuItem.Text = "软件激活"
         '
         '关于我们ToolStripMenuItem
         '
         Me.关于我们ToolStripMenuItem.Name = "关于我们ToolStripMenuItem"
-        Me.关于我们ToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.关于我们ToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
         Me.关于我们ToolStripMenuItem.Text = "关于我们"
         '
         'SerialPort1
@@ -554,6 +569,7 @@ Partial Class WinSerialportManager
         Me.DS按钮1.BackColor = System.Drawing.Color.Transparent
         Me.DS按钮1.BackgroundImage = CType(resources.GetObject("DS按钮1.BackgroundImage"), System.Drawing.Image)
         Me.DS按钮1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.DS按钮1.DialogResult = System.Windows.Forms.DialogResult.None
         Me.DS按钮1.ForeColor = System.Drawing.Color.White
         Me.DS按钮1.Location = New System.Drawing.Point(41, 117)
         Me.DS按钮1.Margin = New System.Windows.Forms.Padding(1)
@@ -572,12 +588,16 @@ Partial Class WinSerialportManager
         Me.DS按钮1.绘制边框 = DSControls.DS按钮.边框.全部
         Me.DS按钮1.自动尺寸扩展 = New System.Drawing.Size(20, 20)
         Me.DS按钮1.贴图 = Nothing
-        Me.DS按钮1.贴图分割边距 = 0
+        Me.DS按钮1.贴图切割边距.上 = 0
+        Me.DS按钮1.贴图切割边距.下 = 0
+        Me.DS按钮1.贴图切割边距.右 = 0
+        Me.DS按钮1.贴图切割边距.左 = 0
         Me.DS按钮1.贴图模式 = DSControls.DS按钮._贴图模式.默认
         Me.DS按钮1.边框颜色 = System.Drawing.Color.Transparent
         Me.DS按钮1.选定 = False
         Me.DS按钮1.选定模式 = False
         Me.DS按钮1.选定颜色 = System.Drawing.Color.SteelBlue
+        Me.DS按钮1.透明区域不引发鼠标事件 = True
         Me.DS按钮1.透明度 = 1.0!
         Me.DS按钮1.颜色 = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         '
@@ -594,6 +614,7 @@ Partial Class WinSerialportManager
         Me.DS按钮8.BackColor = System.Drawing.Color.Transparent
         Me.DS按钮8.BackgroundImage = CType(resources.GetObject("DS按钮8.BackgroundImage"), System.Drawing.Image)
         Me.DS按钮8.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.DS按钮8.DialogResult = System.Windows.Forms.DialogResult.None
         Me.DS按钮8.ForeColor = System.Drawing.Color.White
         Me.DS按钮8.Location = New System.Drawing.Point(130, 68)
         Me.DS按钮8.Margin = New System.Windows.Forms.Padding(1)
@@ -612,12 +633,16 @@ Partial Class WinSerialportManager
         Me.DS按钮8.绘制边框 = DSControls.DS按钮.边框.全部
         Me.DS按钮8.自动尺寸扩展 = New System.Drawing.Size(20, 20)
         Me.DS按钮8.贴图 = Nothing
-        Me.DS按钮8.贴图分割边距 = 0
+        Me.DS按钮8.贴图切割边距.上 = 0
+        Me.DS按钮8.贴图切割边距.下 = 0
+        Me.DS按钮8.贴图切割边距.右 = 0
+        Me.DS按钮8.贴图切割边距.左 = 0
         Me.DS按钮8.贴图模式 = DSControls.DS按钮._贴图模式.默认
         Me.DS按钮8.边框颜色 = System.Drawing.Color.Transparent
         Me.DS按钮8.选定 = False
         Me.DS按钮8.选定模式 = False
         Me.DS按钮8.选定颜色 = System.Drawing.Color.SteelBlue
+        Me.DS按钮8.透明区域不引发鼠标事件 = True
         Me.DS按钮8.透明度 = 1.0!
         Me.DS按钮8.颜色 = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         '
@@ -626,6 +651,7 @@ Partial Class WinSerialportManager
         Me.DS按钮7.BackColor = System.Drawing.Color.Transparent
         Me.DS按钮7.BackgroundImage = CType(resources.GetObject("DS按钮7.BackgroundImage"), System.Drawing.Image)
         Me.DS按钮7.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.DS按钮7.DialogResult = System.Windows.Forms.DialogResult.None
         Me.DS按钮7.ForeColor = System.Drawing.Color.White
         Me.DS按钮7.Location = New System.Drawing.Point(397, 68)
         Me.DS按钮7.Margin = New System.Windows.Forms.Padding(1)
@@ -644,12 +670,16 @@ Partial Class WinSerialportManager
         Me.DS按钮7.绘制边框 = DSControls.DS按钮.边框.全部
         Me.DS按钮7.自动尺寸扩展 = New System.Drawing.Size(20, 20)
         Me.DS按钮7.贴图 = Nothing
-        Me.DS按钮7.贴图分割边距 = 0
+        Me.DS按钮7.贴图切割边距.上 = 0
+        Me.DS按钮7.贴图切割边距.下 = 0
+        Me.DS按钮7.贴图切割边距.右 = 0
+        Me.DS按钮7.贴图切割边距.左 = 0
         Me.DS按钮7.贴图模式 = DSControls.DS按钮._贴图模式.默认
         Me.DS按钮7.边框颜色 = System.Drawing.Color.Transparent
         Me.DS按钮7.选定 = False
         Me.DS按钮7.选定模式 = False
         Me.DS按钮7.选定颜色 = System.Drawing.Color.SteelBlue
+        Me.DS按钮7.透明区域不引发鼠标事件 = True
         Me.DS按钮7.透明度 = 1.0!
         Me.DS按钮7.颜色 = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         '
@@ -658,6 +688,7 @@ Partial Class WinSerialportManager
         Me.DS按钮6.BackColor = System.Drawing.Color.Transparent
         Me.DS按钮6.BackgroundImage = CType(resources.GetObject("DS按钮6.BackgroundImage"), System.Drawing.Image)
         Me.DS按钮6.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.DS按钮6.DialogResult = System.Windows.Forms.DialogResult.None
         Me.DS按钮6.ForeColor = System.Drawing.Color.White
         Me.DS按钮6.Location = New System.Drawing.Point(396, 117)
         Me.DS按钮6.Margin = New System.Windows.Forms.Padding(1)
@@ -676,12 +707,16 @@ Partial Class WinSerialportManager
         Me.DS按钮6.绘制边框 = DSControls.DS按钮.边框.全部
         Me.DS按钮6.自动尺寸扩展 = New System.Drawing.Size(20, 20)
         Me.DS按钮6.贴图 = Nothing
-        Me.DS按钮6.贴图分割边距 = 0
+        Me.DS按钮6.贴图切割边距.上 = 0
+        Me.DS按钮6.贴图切割边距.下 = 0
+        Me.DS按钮6.贴图切割边距.右 = 0
+        Me.DS按钮6.贴图切割边距.左 = 0
         Me.DS按钮6.贴图模式 = DSControls.DS按钮._贴图模式.默认
         Me.DS按钮6.边框颜色 = System.Drawing.Color.Transparent
         Me.DS按钮6.选定 = False
         Me.DS按钮6.选定模式 = False
         Me.DS按钮6.选定颜色 = System.Drawing.Color.SteelBlue
+        Me.DS按钮6.透明区域不引发鼠标事件 = True
         Me.DS按钮6.透明度 = 1.0!
         Me.DS按钮6.颜色 = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         '
@@ -690,6 +725,7 @@ Partial Class WinSerialportManager
         Me.DS按钮5.BackColor = System.Drawing.Color.Transparent
         Me.DS按钮5.BackgroundImage = CType(resources.GetObject("DS按钮5.BackgroundImage"), System.Drawing.Image)
         Me.DS按钮5.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.DS按钮5.DialogResult = System.Windows.Forms.DialogResult.None
         Me.DS按钮5.ForeColor = System.Drawing.Color.White
         Me.DS按钮5.Location = New System.Drawing.Point(308, 68)
         Me.DS按钮5.Margin = New System.Windows.Forms.Padding(1)
@@ -708,12 +744,16 @@ Partial Class WinSerialportManager
         Me.DS按钮5.绘制边框 = DSControls.DS按钮.边框.全部
         Me.DS按钮5.自动尺寸扩展 = New System.Drawing.Size(20, 20)
         Me.DS按钮5.贴图 = Nothing
-        Me.DS按钮5.贴图分割边距 = 0
+        Me.DS按钮5.贴图切割边距.上 = 0
+        Me.DS按钮5.贴图切割边距.下 = 0
+        Me.DS按钮5.贴图切割边距.右 = 0
+        Me.DS按钮5.贴图切割边距.左 = 0
         Me.DS按钮5.贴图模式 = DSControls.DS按钮._贴图模式.默认
         Me.DS按钮5.边框颜色 = System.Drawing.Color.Transparent
         Me.DS按钮5.选定 = False
         Me.DS按钮5.选定模式 = False
         Me.DS按钮5.选定颜色 = System.Drawing.Color.SteelBlue
+        Me.DS按钮5.透明区域不引发鼠标事件 = True
         Me.DS按钮5.透明度 = 1.0!
         Me.DS按钮5.颜色 = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         '
@@ -722,6 +762,7 @@ Partial Class WinSerialportManager
         Me.DS按钮4.BackColor = System.Drawing.Color.Transparent
         Me.DS按钮4.BackgroundImage = CType(resources.GetObject("DS按钮4.BackgroundImage"), System.Drawing.Image)
         Me.DS按钮4.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.DS按钮4.DialogResult = System.Windows.Forms.DialogResult.None
         Me.DS按钮4.ForeColor = System.Drawing.Color.White
         Me.DS按钮4.Location = New System.Drawing.Point(219, 68)
         Me.DS按钮4.Margin = New System.Windows.Forms.Padding(1)
@@ -740,12 +781,16 @@ Partial Class WinSerialportManager
         Me.DS按钮4.绘制边框 = DSControls.DS按钮.边框.全部
         Me.DS按钮4.自动尺寸扩展 = New System.Drawing.Size(20, 20)
         Me.DS按钮4.贴图 = Nothing
-        Me.DS按钮4.贴图分割边距 = 0
+        Me.DS按钮4.贴图切割边距.上 = 0
+        Me.DS按钮4.贴图切割边距.下 = 0
+        Me.DS按钮4.贴图切割边距.右 = 0
+        Me.DS按钮4.贴图切割边距.左 = 0
         Me.DS按钮4.贴图模式 = DSControls.DS按钮._贴图模式.默认
         Me.DS按钮4.边框颜色 = System.Drawing.Color.Transparent
         Me.DS按钮4.选定 = False
         Me.DS按钮4.选定模式 = False
         Me.DS按钮4.选定颜色 = System.Drawing.Color.SteelBlue
+        Me.DS按钮4.透明区域不引发鼠标事件 = True
         Me.DS按钮4.透明度 = 1.0!
         Me.DS按钮4.颜色 = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         '
@@ -754,6 +799,7 @@ Partial Class WinSerialportManager
         Me.DS按钮3.BackColor = System.Drawing.Color.Transparent
         Me.DS按钮3.BackgroundImage = CType(resources.GetObject("DS按钮3.BackgroundImage"), System.Drawing.Image)
         Me.DS按钮3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.DS按钮3.DialogResult = System.Windows.Forms.DialogResult.None
         Me.DS按钮3.ForeColor = System.Drawing.Color.White
         Me.DS按钮3.Location = New System.Drawing.Point(41, 68)
         Me.DS按钮3.Margin = New System.Windows.Forms.Padding(1)
@@ -772,12 +818,16 @@ Partial Class WinSerialportManager
         Me.DS按钮3.绘制边框 = DSControls.DS按钮.边框.全部
         Me.DS按钮3.自动尺寸扩展 = New System.Drawing.Size(20, 20)
         Me.DS按钮3.贴图 = Nothing
-        Me.DS按钮3.贴图分割边距 = 0
+        Me.DS按钮3.贴图切割边距.上 = 0
+        Me.DS按钮3.贴图切割边距.下 = 0
+        Me.DS按钮3.贴图切割边距.右 = 0
+        Me.DS按钮3.贴图切割边距.左 = 0
         Me.DS按钮3.贴图模式 = DSControls.DS按钮._贴图模式.默认
         Me.DS按钮3.边框颜色 = System.Drawing.Color.Transparent
         Me.DS按钮3.选定 = False
         Me.DS按钮3.选定模式 = False
         Me.DS按钮3.选定颜色 = System.Drawing.Color.SteelBlue
+        Me.DS按钮3.透明区域不引发鼠标事件 = True
         Me.DS按钮3.透明度 = 1.0!
         Me.DS按钮3.颜色 = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         '
@@ -813,12 +863,6 @@ Partial Class WinSerialportManager
         Me.PictureBox1.Size = New System.Drawing.Size(1095, 517)
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
-        '
-        '连接设备ToolStripMenuItem
-        '
-        Me.连接设备ToolStripMenuItem.Name = "连接设备ToolStripMenuItem"
-        Me.连接设备ToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.连接设备ToolStripMenuItem.Text = "连接设备"
         '
         'WinSerialportManager
         '
@@ -936,4 +980,5 @@ Partial Class WinSerialportManager
     Friend WithEvents ComboBox6 As ComboBox
     Friend WithEvents DS按钮1 As DSControls.DS按钮
     Friend WithEvents 连接设备ToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents 程序编程ToolStripMenuItem As ToolStripMenuItem
 End Class

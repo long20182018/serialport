@@ -49,7 +49,7 @@ Public Class AdminManualSpeedsettings
             '注册窗体的键盘事件
             Me.KeyPreview = True
             '从数据库中提取生成UI的设置（包括个数，地址，类型）
-            UIarrayList = conn.GetRowsarrayList("手动速度")
+            UIarrayList = conn.GetRowsarrayList("settings.mdb", "手动速度")
             '创建UI更新线程
             CheckForIllegalCrossThreadCalls = False
             UIGeneration = New Thread(AddressOf PreparationGenerationUI)

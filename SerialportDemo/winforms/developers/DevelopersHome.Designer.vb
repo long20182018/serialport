@@ -133,7 +133,6 @@ Partial Class DevelopersHome
         Me.DS按钮1.绘制边框 = DSControls.DS按钮.边框.全部
         Me.DS按钮1.自动尺寸扩展 = New System.Drawing.Size(20, 20)
         Me.DS按钮1.贴图 = Nothing
-        Me.DS按钮1.贴图分割边距 = 0
         Me.DS按钮1.贴图模式 = DSControls.DS按钮._贴图模式.默认
         Me.DS按钮1.边框颜色 = System.Drawing.Color.Transparent
         Me.DS按钮1.选定 = False

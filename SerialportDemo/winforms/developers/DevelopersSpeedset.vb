@@ -56,7 +56,7 @@ Public Class DevelopersSpeedset
         '  Const VK_SHIFT = &H10
         '  Public myarr(0 To 255) As Byte
         Dim Shift_Ctrl_D As Byte = 0
-        Dim frm As New DevelopersManager
+        Dim frm As New Showdebugdevice
 
         Dim returncrc As New ReturnCRC
         Do
